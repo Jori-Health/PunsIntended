@@ -1,0 +1,56 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ClinicalNote",
+  "type": "object",
+  "properties": {
+    "patient_id": {
+      "type": "string"
+    },
+    "mrn": {
+      "type": "string"
+    },
+    "source": {
+      "type": "string"
+    },
+    "oncologist_id": {
+      "type": "string"
+    },
+    "oncologist_name": {
+      "type": "string"
+    },
+    "note_datetime": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "section": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string"
+    },
+    "provenance": {
+      "type": "object",
+      "properties": {
+        "ingested_from": {
+          "type": "string"
+        },
+        "checksum": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "ingested_from",
+        "checksum"
+      ]
+    }
+  },
+  "required": [
+    "patient_id",
+    "mrn",
+    "source",
+    "oncologist_id",
+    "note_datetime",
+    "text",
+    "provenance"
+  ]
+}

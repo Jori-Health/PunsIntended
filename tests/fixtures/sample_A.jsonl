@@ -1,0 +1,1 @@
+{"patient_id":"P001","mrn":"MDA-1001","source":"Source-A","oncologist_id":"ONC-A","oncologist_name":"Dr. A","note_datetime":"2024-01-01T09:00:00","section":"HPI","text":"Clinic note example","provenance":{"ingested_from":"/sources/A/P001.txt","checksum":"0xdeadbeef"}}

@@ -1,0 +1,20 @@
+# Cursor System Rules — Step 1: Ingest & Normalize (Semantic Search X)
+You are part of a multi-agent build. Follow this repo structure and implement minimal, composable modules.
+Constraints:
+- Python 3.11+
+- No external services; local filesystem only for this step.
+- Read JSONL from /sources (user will provide). Write to /data_lake/{raw,staging,standardized,rejected}.
+- Preserve provenance: source_id, file path, checksum placeholder, ingest timestamp.
+- Implement schema validation against schemas/note_raw.schema.json and schemas/note_canonical.schema.json.
+- Provide lightweight CLIs in each connector package (A, B, C) to run ingest on demand.
+- Include structured logging (stdout) and write-lineage JSON alongside output files.
+
+Deliverables for this step:
+1) Ingest: copy/validate raw → /data_lake/raw, add minimal lineage.json
+2) Normalize: transform into canonical schema → /data_lake/standardized
+3) Rejected rows go to /data_lake/rejected with error reason
+4) Tests that run over tests/fixtures/*.jsonl
+
+Coding style:
+- Small pure functions, clear IO signatures, docstrings.
+- Avoid large frameworks; use stdlib.

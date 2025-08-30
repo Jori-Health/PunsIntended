@@ -1,0 +1,63 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Raw Note",
+  "type": "object",
+  "required": [
+    "patient_id",
+    "mrn",
+    "source",
+    "oncologist_id",
+    "oncologist_name",
+    "note_datetime",
+    "section",
+    "text",
+    "provenance"
+  ],
+  "properties": {
+    "patient_id": {
+      "type": "string"
+    },
+    "mrn": {
+      "type": "string"
+    },
+    "source": {
+      "type": "string",
+      "enum": [
+        "Source-A",
+        "Source-B",
+        "Source-C"
+      ]
+    },
+    "oncologist_id": {
+      "type": "string"
+    },
+    "oncologist_name": {
+      "type": "string"
+    },
+    "note_datetime": {
+      "type": "string"
+    },
+    "section": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string"
+    },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "ingested_from",
+        "checksum"
+      ],
+      "properties": {
+        "ingested_from": {
+          "type": "string"
+        },
+        "checksum": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "additionalProperties": true
+}

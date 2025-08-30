@@ -1,0 +1,94 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Canonical Note",
+  "type": "object",
+  "required": [
+    "uid",
+    "patient_id",
+    "mrn",
+    "source_id",
+    "encounter",
+    "content",
+    "provenance",
+    "validation"
+  ],
+  "properties": {
+    "uid": {
+      "type": "string"
+    },
+    "patient_id": {
+      "type": "string"
+    },
+    "mrn": {
+      "type": "string"
+    },
+    "source_id": {
+      "type": "string"
+    },
+    "encounter": {
+      "type": "object",
+      "required": [
+        "ts",
+        "section"
+      ],
+      "properties": {
+        "ts": {
+          "type": "string"
+        },
+        "section": {
+          "type": "string"
+        }
+      }
+    },
+    "content": {
+      "type": "object",
+      "required": [
+        "raw_text"
+      ],
+      "properties": {
+        "raw_text": {
+          "type": "string"
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "source",
+        "oncologist_id",
+        "oncologist_name",
+        "ingested_from",
+        "checksum"
+      ],
+      "properties": {
+        "source": {
+          "type": "string"
+        },
+        "oncologist_id": {
+          "type": "string"
+        },
+        "oncologist_name": {
+          "type": "string"
+        },
+        "ingested_from": {
+          "type": "string"
+        },
+        "checksum": {
+          "type": "string"
+        }
+      }
+    },
+    "validation": {
+      "type": "object",
+      "required": [
+        "status"
+      ],
+      "properties": {
+        "status": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "additionalProperties": true
+}
