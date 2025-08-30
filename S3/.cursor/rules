@@ -1,0 +1,47 @@
+# Step-3 — Retrieval & Ranking (Semantic Search X)
+
+Goal: Given a query, return final top-10 chunks with calibrated scores, ready for display/extraction.
+Inputs:
+- Step-1 artifacts: /artifacts/{bm25,dense}/<date>/, /data_lake/chunks/<date>/chunks.jsonl
+- Optional Step-2 links: /data_warehouse/links/<date>/note_links.jsonl (to attach patient_uid)
+
+Stages:
+A) Scouts (BM25 + ANN)
+- Query BM25 and Dense; union-merge to K_A≈200 with scores, normalized to [0,1] via min–max per head.
+- Output: stageA/candidates.jsonl [{chunk_id, s_bm25, s_dense, source_id, note_uid?}]
+
+B) Inspectors (late-interaction/neural-sparse)
+- Re-score the 200 using a lightweight LI or SPLADE-stub.
+- Output: stageB/rescored.jsonl top-50 [{chunk_id, s_li, evidence?: [{token,weight,pos}]}]
+
+C) Judges (cross-encoder)
+- Cross-encode (query, full chunk text) pairs; calibrate scores with isotonic/Platt (stub ok).
+- Output: stageC/final.jsonl top-10 [{chunk_id, calibrated_score, patient_uid?, pointers:{chunk_offset,file}}]
+
+Configs (configs/retrieval.yaml):
+- K_A: 200; K_B: 50; K_C: 10
+- bm25: k1=0.9, b=0.4
+- dense: encoder="stub-average"
+- li: model="stub-colbert", max_len=512
+- xenc: model="stub-cross-encoder"
+- fusion: method="ranked-logit" (OK to start with weighted sum: w_bm25=0.5, w_dense=0.5)
+
+Deliverables:
+- stageA/__init__.py  → build/query functions + CLI: `python -m stageA run <bm25_dir> <dense_dir> <chunks_jsonl> "<query>" <out_dir>`
+- stageB/__init__.py  → `python -m stageB run <candidates.jsonl> <chunks_jsonl> <out_dir>`
+- stageC/__init__.py  → `python -m stageC run <rescored.jsonl> <chunks_jsonl> <out_dir> [--links <note_links.jsonl>]`
+- retrieve/fusion/combiner.py → score normalization + fusion
+- retrieve/utils/io.py → load/save helpers; text lookup by chunk_id
+- tests/* → smoke tests with synthetic fixtures
+
+Acceptance:
+- A: exactly K_A or fewer if corpus small; both scores present; fusion_score monotonic with weights.
+- B: ≤K_B with added s_li; evidence optional but schema-valid.
+- C: ≤K_C with calibrated_score in [0,1]; sorted desc; (if links provided) patient_uid attached.
+- Deterministic given same inputs.
+- Per-stage diagnostics JSON with counts, latencies (time.perf_counter).
+
+Make targets:
+- `make stage3` → runs A→B→C pipeline
+- `make query Q="progression after FOLFIRINOX"` → full run and pretty-print final
+

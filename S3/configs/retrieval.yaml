@@ -1,0 +1,31 @@
+# Retrieval configuration for Stage 3 pipeline
+
+# Stage limits
+K_A: 200  # Number of candidates from Stage A
+K_B: 50   # Number of candidates from Stage B  
+K_C: 10   # Number of final results from Stage C
+
+# BM25 parameters
+bm25:
+  k1: 0.9
+  b: 0.4
+
+# Dense retrieval parameters
+dense:
+  encoder: "stub-average"
+
+# Late interaction parameters
+li:
+  model: "stub-colbert"
+  max_len: 512
+
+# Cross-encoder parameters
+xenc:
+  model: "stub-cross-encoder"
+
+# Fusion parameters
+fusion:
+  method: "ranked-logit"  # Can start with weighted sum
+  weights:
+    w_bm25: 0.5
+    w_dense: 0.5

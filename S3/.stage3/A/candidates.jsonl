@@ -1,0 +1,5 @@
+{"chunk_id": "chunk_005", "s_bm25": 0.30000000000000004, "s_dense": 0.8716239795169036, "source_id": "note_005", "note_uid": "note_005", "fusion_score": 1.0}
+{"chunk_id": "chunk_001", "s_bm25": 0.30000000000000004, "s_dense": 0.7772889730125689, "source_id": "note_001", "note_uid": "note_001", "fusion_score": 0.9290701179936574}
+{"chunk_id": "chunk_003", "s_bm25": 0.30000000000000004, "s_dense": 0.7730283094196047, "source_id": "note_003", "note_uid": "note_003", "fusion_score": 0.9258665525610965}
+{"chunk_id": "chunk_004", "s_bm25": 0.1, "s_dense": 0.28790038338396523, "source_id": "note_004", "note_uid": "note_004", "fusion_score": 0.06110199879908981}
+{"chunk_id": "chunk_002", "s_bm25": 0.1, "s_dense": 0.20663622093090273, "source_id": "note_002", "note_uid": "note_002", "fusion_score": 0.0}

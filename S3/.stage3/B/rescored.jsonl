@@ -1,0 +1,5 @@
+{"chunk_id": "chunk_005", "s_li": 0.5648231787589877, "fusion_score": 1.0, "s_bm25": 0.30000000000000004, "s_dense": 0.8716239795169036, "source_id": "note_005", "note_uid": "note_005", "evidence": [{"token": "folfirinox", "weight": 0.3728458084772743, "pos": 10}]}
+{"chunk_id": "chunk_003", "s_li": 0.5309545454884413, "fusion_score": 0.9258665525610965, "s_bm25": 0.30000000000000004, "s_dense": 0.7730283094196047, "source_id": "note_003", "note_uid": "note_003"}
+{"chunk_id": "chunk_001", "s_li": 0.48030051351673775, "fusion_score": 0.9290701179936574, "s_bm25": 0.30000000000000004, "s_dense": 0.7772889730125689, "source_id": "note_001", "note_uid": "note_001"}
+{"chunk_id": "chunk_002", "s_li": 0.16666374560451666, "fusion_score": 0.0, "s_bm25": 0.1, "s_dense": 0.20663622093090273, "source_id": "note_002", "note_uid": "note_002"}
+{"chunk_id": "chunk_004", "s_li": 0.1401998282676721, "fusion_score": 0.06110199879908981, "s_bm25": 0.1, "s_dense": 0.28790038338396523, "source_id": "note_004", "note_uid": "note_004"}

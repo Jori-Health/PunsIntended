@@ -1,0 +1,5 @@
+{"chunk_id": "chunk_001", "text": "Patient shows progression after FOLFIRINOX treatment. The tumor has increased in size by 20%.", "source_id": "note_001", "note_uid": "note_001", "offset": 0, "source_file": "patient_notes.txt"}
+{"chunk_id": "chunk_002", "text": "FOLFIRINOX chemotherapy was administered for pancreatic cancer. Patient tolerated the treatment well.", "source_id": "note_002", "note_uid": "note_002", "offset": 100, "source_file": "treatment_notes.txt"}
+{"chunk_id": "chunk_003", "text": "Follow-up scan shows stable disease. No progression observed after FOLFIRINOX.", "source_id": "note_003", "note_uid": "note_003", "offset": 200, "source_file": "scan_notes.txt"}
+{"chunk_id": "chunk_004", "text": "Patient experienced side effects from FOLFIRINOX including nausea and fatigue.", "source_id": "note_004", "note_uid": "note_004", "offset": 300, "source_file": "side_effects.txt"}
+{"chunk_id": "chunk_005", "text": "Progression of disease was noted in the liver metastases after FOLFIRINOX treatment.", "source_id": "note_005", "note_uid": "note_005", "offset": 400, "source_file": "metastasis_notes.txt"}

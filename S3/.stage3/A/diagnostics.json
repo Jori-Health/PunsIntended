@@ -1,0 +1,15 @@
+{
+  "stage": "A",
+  "query": "progression after FOLFIRINOX",
+  "total_chunks": 5,
+  "bm25_results": 5,
+  "dense_results": 5,
+  "final_candidates": 5,
+  "K_A": 200,
+  "timing": {
+    "bm25_search": 1.3547949492931366e-05,
+    "dense_search": 0.001830385997891426,
+    "fusion": 1.905183307826519e-05,
+    "total": 0.0034702320117503405
+  }
+}

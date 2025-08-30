@@ -1,0 +1,12 @@
+{
+  "stage": "C",
+  "input_candidates": 5,
+  "processed_candidates": 5,
+  "final_results": 5,
+  "K_C": 10,
+  "patient_uid_attached": 0,
+  "timing": {
+    "cross_encoding": 0.0017030981834977865,
+    "total": 0.001703412039205432
+  }
+}

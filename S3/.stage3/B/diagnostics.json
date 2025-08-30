@@ -1,0 +1,10 @@
+{
+  "stage": "B",
+  "input_candidates": 5,
+  "processed_candidates": 5,
+  "K_B": 50,
+  "timing": {
+    "rescoring": 0.0017327000387012959,
+    "total": 0.0017331009730696678
+  }
+}
