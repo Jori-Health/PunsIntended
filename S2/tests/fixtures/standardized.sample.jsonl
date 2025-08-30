@@ -1,0 +1,2 @@
+{"uid":"note_uid_1","patient_id":"P001","mrn":"MDA-1001","source_id":"Source-A","encounter":{"ts":"2024-01-10T09:00:00","section":"HPI"},"content":{"raw_text":"Pancreatic adenocarcinoma; FOLFIRINOX planned."},"provenance":{"source":"Source-A","oncologist_id":"ONC-A","oncologist_name":"Dr. Alvarez","ingested_from":"/sources/A/P001.txt","checksum":"0xdeadbeef"},"validation":{"status":"ok"}}
+

@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Note→Patient Link",
+  "type": "object",
+  "required": ["note_uid","patient_uid","rule","mrn","source_id"],
+  "properties": {
+    "note_uid": {"type":"string"},
+    "patient_uid": {"type":"string"},
+    "rule": {"type":"string"},
+    "mrn": {"type":"string"},
+    "source_id": {"type":"string"}
+  }
+}
+

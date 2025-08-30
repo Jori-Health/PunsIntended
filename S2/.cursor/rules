@@ -1,0 +1,19 @@
+# Cursor System Rules — Step 2: Identity Resolution & Unit-of-Record (Semantic Search X)
+
+Goal: deterministically reconcile notes from Sources A/B/C into a single **patient unit-of-record (UoR)** with stable `patient_uid`, resolvable across sources.
+
+Constraints:
+- Python 3.11+; local filesystem.
+- Inputs: canonical notes JSONL from `/data_lake/standardized/*.jsonl` (Step-1 output).
+- Outputs:
+  - `/data_warehouse/patients/{date}/patients.jsonl`
+  - `/data_warehouse/links/{date}/note_links.jsonl`
+  - `/artifacts/identity/{date}/report.json`
+- Matching strategy:
+  1. Primary: normalized MRN match.
+  2. Secondary: (DOB, sex, dx substring) if MRN missing/inconsistent.
+  3. Conflicts: write to `/data_warehouse/conflicts/{date}/`.
+- CLIs:
+  - Build UoR: `python -m resolve.rules build /data_lake/standardized ./data_warehouse ./artifacts/identity`
+  - Inspect:   `python -m resolve.rules report ./artifacts/identity/{date}/report.json`
+
